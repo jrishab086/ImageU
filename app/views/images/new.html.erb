@@ -1,0 +1,6 @@
+<h1>Upload Images</h1>
+<h3><%= link_to 'show images', images_path %></h3>
+<%= form_with(model: @image, url: images_path, local: true, html: {multipart: true}) do |form| %>
+    <%= form.file_field :files, multiple: true %>
+    <%= form.submit "Upload" %>
+    <% end %>

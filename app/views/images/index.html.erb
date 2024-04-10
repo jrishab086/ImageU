@@ -1,0 +1,13 @@
+<!-- app/views/images/index.html.erb -->
+
+<h1>User Images</h1>
+<% @images.each do |image| %>
+    <% if image.present? && image.file.attached? %>
+        <div>
+        <%= image_tag image.file %>
+        <%= button_to "Delete", image_path(image), method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+    <% else %>
+    <p>hh</p>
+    <% end %>
+<% end %>
