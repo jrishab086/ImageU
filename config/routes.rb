@@ -7,6 +7,6 @@ Rails.application.routes.draw do
         confirmations: 'users/confirmations'
       }
   resources :images
-  root to: 'images#new'
+  root to: 'images#index'
   get '/confirmation_pending' => 'home#after_registration_path'
 end

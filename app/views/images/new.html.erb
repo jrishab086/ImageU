@@ -1,6 +1,16 @@
-<h1>Upload Images</h1>
-<h3><%= link_to 'show images', images_path %></h3>
-<%= form_with(model: @image, url: images_path, local: true, html: {multipart: true}) do |form| %>
-    <%= form.file_field :files, multiple: true %>
-    <%= form.submit "Upload" %>
-    <% end %>
+<div class="container">
+    <h1>Upload Images <%= current_user.email %></h1>
+    <div class= "card">
+        <div class="card-body">
+        <h5 class="card-title">Upload an Image</h5>
+        <%= form_with(model: @image, url: images_path, local: true, html: {multipart: true}) do |form| %>
+        <div class="form-group">
+            <%= form.label :file, "Choose Image", class: "form-label" %>
+            <%= form.file_field :file, class: "form-control-file" %>
+        </div>
+            <%= form.submit "Upload", class: "btn btn-primary" %>
+        <% end %>
+        </div>
+    </div>
+    <h3><%= link_to 'Show Images', images_path, class: "btn btn-primary mt-3" %></h3>
+</div>
