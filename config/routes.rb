@@ -8,5 +8,5 @@ Rails.application.routes.draw do
       }
   resources :images
   root to: 'images#index'
-  get '/confirmation_pending' => 'home#after_registration_path'
+  get '/confirmation_pending' => 'images#after_registration_path'
 end

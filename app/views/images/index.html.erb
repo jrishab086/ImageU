@@ -1,7 +1,5 @@
 <div class= "container">
     <h1>User Images</h1>
-    <div class="card">
-        <div class="card-body">
             <div class= "row">
                 <% @images.each do |image| %>
                     <% if image.present? && image.file.attached? %>
@@ -16,8 +14,6 @@
             <div class=" pagination pagination-lg">
                 <%= will_paginate @images, :container => false %>
             </div>
-        </div>
-    </div>
     <div>
         <%= link_to 'Add More Images', new_image_path, class: "btn btn-primary mt-3" %>
     </div >
