@@ -5,7 +5,7 @@
                     <% if image.present? && image.file.attached? %>
                         <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
                             <div class="card">
-                                <%= link_to image_tag(image.file.variant(resize: "300x300"), class: "card-img-top"), image_path(image)%>
+                                <%= link_to image_tag(image.file, class: "card-img-top", width: "300", height: "300"), image_path(image)%>
                             </div>
                         </div>
                     <% end %>
